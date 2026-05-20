@@ -1,7 +1,7 @@
 (kicad_pcb
-	(version 20241229)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(general
 		(thickness 1.6)
 		(legacy_teardrops no)
@@ -36,7 +36,20 @@
 	(setup
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
-		(tenting front back)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
 		(grid_origin 20.04 19.96)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
@@ -46,15 +59,12 @@
 			(usegerberattributes yes)
 			(usegerberadvancedattributes yes)
 			(creategerberjobfile yes)
-			(dashed_line_dash_ratio 12.000000)
-			(dashed_line_gap_ratio 3.000000)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
 			(svgprecision 4)
 			(plotframeref no)
 			(mode 1)
 			(useauxorigin no)
-			(hpglpennumber 1)
-			(hpglpenspeed 20)
-			(hpglpendiameter 15.000000)
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
 			(pdf_metadata yes)
@@ -78,7 +88,6 @@
 			(outputdirectory "../../")
 		)
 	)
-	(net 0 "")
 	(footprint "MAI_PanelHole:PanelHole_EurorackMounting"
 		(layer "F.Cu")
 		(uuid "3b9413f7-4708-416b-b571-ffa50ad504f8")
@@ -136,6 +145,7 @@
 			)
 		)
 		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_text user "${REFERENCE}"
 			(at 0 2.5 0)
 			(unlocked yes)
@@ -215,6 +225,7 @@
 			)
 		)
 		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_text user "${REFERENCE}"
 			(at 0 2.5 0)
 			(unlocked yes)
@@ -294,6 +305,7 @@
 			)
 		)
 		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_poly
 			(pts
 				(xy -3.763482 0.587063) (xy -2.788001 -2.823284) (xy -2.342504 -2.823284) (xy -2.342504 2.822223)
@@ -560,6 +572,18 @@
 			)
 		)
 		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -5.4 -6.2)
+			(end 5.4 5.7)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "c576dc6e-a296-4d3e-9fa8-779fb1114432")
+		)
 		(fp_text user "${REFERENCE}"
 			(at 0 2.5 0)
 			(unlocked yes)
@@ -638,6 +662,7 @@
 			)
 		)
 		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_text user "${REFERENCE}"
 			(at 0 2.5 0)
 			(unlocked yes)
@@ -717,6 +742,7 @@
 			)
 		)
 		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_text user "${REFERENCE}"
 			(at 0 2.5 0)
 			(unlocked yes)
@@ -796,6 +822,7 @@
 			)
 		)
 		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
 			(start -3.75 -3.75)
 			(end 3.75 3.75)
@@ -806,6 +833,17 @@
 			(fill yes)
 			(layer "F.Mask")
 			(uuid "78e603ee-45d5-4996-9d60-2f83b087dcab")
+		)
+		(fp_rect
+			(start -5.4 -6.2)
+			(end 5.4 5.7)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "4f89e5dc-ca1a-4e5f-b8ab-5605baf2ab1e")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 2.5 0)
@@ -924,8 +962,6 @@
 		)
 	)
 	(zone
-		(net 0)
-		(net_name "")
 		(layer "F.Cu")
 		(uuid "1309bb32-5e05-4a87-afba-ab0d60efc0c8")
 		(hatch edge 0.5)
@@ -933,12 +969,10 @@
 			(clearance 0.5)
 		)
 		(min_thickness 0.25)
-		(filled_areas_thickness no)
 		(fill yes
 			(thermal_gap 0.5)
 			(thermal_bridge_width 0.5)
 			(island_removal_mode 1)
-			(island_area_min 10)
 		)
 		(polygon
 			(pts
@@ -947,7 +981,7 @@
 		)
 		(filled_polygon
 			(layer "F.Cu")
-			(island)
+			(island yes)
 			(pts
 				(xy 24.431341 20.979685) (xy 24.477096 21.032489) (xy 24.48704 21.101647) (xy 24.458015 21.165203)
 				(xy 24.439788 21.182376) (xy 24.329921 21.266679) (xy 24.329914 21.266685) (xy 24.116685 21.479914)
